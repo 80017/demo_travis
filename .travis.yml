@@ -1,0 +1,34 @@
+sudo: required
+
+language: node
+
+services:
+  - docker
+
+branches:
+  only:
+  - develop
+  
+jobs:
+  include:
+    - stage: Build Image and Push in Docker hub
+      script:
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t demo_travis:dev .
+      - docker images
+      - docker tag demo_travis:latest 80017/demo_travis:dev
+      - docker push 80017/demo_travis:dev
+    - stage: Upgrade Rancher Service
+      script:
+      - bash ./upgrade.sh
+    - stage: Finish Rancher Service
+      script:
+      - bash ./finish.sh
+notifications:
+  email:
+    recipients:
+      - arpitap@officebeacon.com
+    on_success: always
+    on_failure: always
+
+
