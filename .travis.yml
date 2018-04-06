@@ -16,7 +16,7 @@ jobs:
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - docker build -t demo_travis:dev .
       - docker images
-      - docker tag demo_travis:latest 80017/demo_travis:dev
+      - docker tag demo_travis:dev 80017/demo_travis:dev
       - docker push 80017/demo_travis:dev
     - stage: Upgrade Rancher Service
       script:
