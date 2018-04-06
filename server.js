@@ -7,7 +7,7 @@ const PORT = 5555;
 const app = express();
 
 app.get('/',function (req, res) {
- res.send('Hello');
+ res.send('Welcome To Office Beacon');
 });
 
 app.listen(PORT);
