@@ -1,20 +1,31 @@
 'use strict';
 
-const express = require('express');
+//const express = require('express');
+//const PORT = 5555;
+
+//const app = express();
+
+//app.get('/',function (req, res) {
+//   res.send('Welcome To FLOWZ...................');
+//});
+
+//app.listen(PORT);
+//console.log('port is:' + PORT);
+
+
+
+
+
+var express = require('express');
 var fs = require('fs');
 
-const PORT = 5555;
-
-const app = express();
-
-app.get('/',function (req, res) {
+var app = express()
  
- var img = fs.readFileSync('./ob.png');
+app.get('/', function (req, res) {
+	var img = fs.readFileSync('./ob.png');
 	res.writeHead(200, {'Content-Type': 'image/png' });
      	res.end(img, 'binary');
+  	// res.send('Hello World')
+})
  
-# res.send('Welcome To FLOWZ...................');
-});
-
-app.listen(PORT);
-console.log('port is:' + PORT);
+app.listen(5555)
