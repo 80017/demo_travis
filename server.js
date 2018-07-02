@@ -19,7 +19,7 @@ var fs = require('fs');
 var app = express()		
  		
 app.get('/', function (req, res) {		
-	var img = fs.readFileSync('./ob.png');		
+	var img = fs.readFileSync('./officebeacon.png');		
 	res.writeHead(200, {'Content-Type': 'image/png' });		
      	res.end(img, 'binary');		
   	// res.send('Hello World')		
