@@ -22,7 +22,7 @@ console.log('port is:' + PORT);
 //	var img = fs.readFileSync('./officebeacon.png');		
 //	res.writeHead(200, {'Content-Type': 'image/png' });		
 //     	res.end(img, 'binary');		
-  	// res.send('Hello World')		
+      // res.send('Hello World')		
 //})		
  		
 //app.listen(5555)
