@@ -6,7 +6,7 @@ const PORT = 5555;
 const app = express();
 
 app.get('/',function (req, res) {
-   res.send('Welcome To FLOWZ...................');
+   res.send('<h1>Welcome To FLOWZ...................</h1>');
 });
 
 app.listen(PORT);
