@@ -13,7 +13,7 @@ jobs:
   include:
     - stage: Build Image and Push in Docker hub
       script:
-      - docker run --privileged --net="host" -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io http://sitespeed.io  --graphite.host=205.147.96.47
+      - docker run --privileged --net="host" -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io https://webbuilder.flowzcluster.tk  --graphite.host=205.147.96.47
 
 
 
