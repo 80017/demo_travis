@@ -8,12 +8,12 @@ services:
 branches:
   only:
   - master
-  
+
+before_script:
+    - cp .env.travis .env
+
 jobs:
   include:
     - stage: Build Image and Push in Docker hub
       script:
-      - docker run --shm-size=1g  -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io:7.3.6 --outputFolder /my/folder  http://webbuilder.flowzcluster.tk --graphite.host=101.53.138.170  --graphite.namespace=sitespeed_io.webbuilder_$TRAVIS_BUILD_NUMBER -n 1
-
-
-
+      - echo "aaaaa"
