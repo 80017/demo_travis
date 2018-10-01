@@ -16,4 +16,4 @@ jobs:
   include:
     - stage: Build Image and Push in Docker hub
       script:
-      - echo "aaaaa"
+      - cat .netrc
